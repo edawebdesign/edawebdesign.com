@@ -1,0 +1,21 @@
+<form class="form-horizontal">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input ng-model="contactEmail" type="email" class="form-control" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Inquiry</label>
+    <div class="col-sm-10">
+      <textarea ng-model="contactText" class="form-control" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button ng-click="sendEmail()" class="btn btn-default">Send</button>
+    </div>
+  </div>
+</form>
+
+{{contactEmail}}
