@@ -29,10 +29,10 @@ app.post('/api/email', function(req, res){
         var send_at = "";
         mandrill_client.messages.send({"message": message, "async": async, "ip_pool": ip_pool, "send_at": send_at}, function(result) {
             console.log(result);
+            res.status(200).json(result.data);
         }, function(e) {
-            // Mandrill returns the error as an object with name and message keys
             console.log('A mandrill error occurred: ' + e.name + ' - ' + e.message);
-            // A mandrill error occurred: Unknown_Subaccount - No subaccount exists with the id 'customer-123'
+            res.status(203).json(e.message);
         });
 });
 
